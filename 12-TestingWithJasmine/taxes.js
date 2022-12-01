@@ -27,3 +27,11 @@ let input = document.getElementById("username");
 function submitForm(){
     usernames.push(input.value)
 }
+
+function append(arr, val){
+    arr.push(val);
+}
+
+function appendPure(arr, val){
+    return [...arr, val];
+}
