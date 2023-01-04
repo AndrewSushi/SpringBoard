@@ -26,7 +26,7 @@ function vowelCount(str){
         if(vowels.includes(lowerChar)){
             if(vowelMap.has(lowerChar)){
                 vowelMap.set(lowerChar, vowelMap.get(lowerChar) + 1);
-            }else{
+            }else{ 
                 vowelMap.set(lowerChar, 1);
             }
         }
