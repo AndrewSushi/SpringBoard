@@ -17,8 +17,12 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
 
 function makeBoard() {
   // TODO: set "board" to empty HEIGHT x WIDTH matrix array
-  for (let y = 0; y < HEIGHT; y++) {
-    board.push(Array.from({ length: WIDTH }));
+  for (let i = 0; i < HEIGHT; i++) {
+    let row = [];
+    for (let j = 0; j < WIDTH; j++){
+      row.push(null);
+    }
+    board.push(row);
   }
 }
 
@@ -28,10 +32,13 @@ function makeHtmlBoard() {
   // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
   const htmlBoard = document.getElementById("board");
   // TODO: add comment for this code
+  
+  // These are the buttons to click to choose where to place the piece by giving them click event listeners and column attributes
   const top = document.createElement("tr");
   top.setAttribute("id", "column-top");
   top.addEventListener("click", handleClick);
 
+  // Creating WIDTH amount of them and appending them to the board
   for (var x = 0; x < WIDTH; x++) {
     const headCell = document.createElement("td");
     headCell.setAttribute("id", x);
@@ -40,6 +47,7 @@ function makeHtmlBoard() {
   htmlBoard.append(top);
 
   // TODO: add comment for this code
+  // Creating cells by going through each row and cell and assigning them a specific x and y co-ordinate and appending each row to the board
   for (var y = 0; y < HEIGHT; y++) {
     const row = document.createElement("tr");
     for (var x = 0; x < WIDTH; x++) {
@@ -55,22 +63,25 @@ function makeHtmlBoard() {
 
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
+  // Finds the first empty spot by reverse indexing through the column starting from the bottom
   for(let y = HEIGHT - 1; y >= 0; y--){
     if(!board[y][x]){
       return y
     }
   }
-  return null;
+  return null; // If completely full
 }
 
 /** placeInTable: update DOM to place piece into HTML table of board */
 
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
+  // Creates a piece and assigns it a class dependant on the current player which also decides the color
   const piece = document.createElement("div");
   piece.classList.add("piece")
   piece.classList.add(`p${currPlayer}`);
 
+  // Appends the piece to the location found given the x and y co-ordinates
   const loc = document.getElementById(`${y}-${x}`);
   loc.append(piece);
 }
@@ -86,7 +97,7 @@ function endGame(msg) {
 
 function handleClick(evt) {
   // get x from ID of clicked cell
-  const x = +evt.target.id;
+  const x = evt.target.id;
 
   // get next spot in column (if none, ignore click)
   const y = findSpotForCol(x);
