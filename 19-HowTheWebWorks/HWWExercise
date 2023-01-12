@@ -1,0 +1,9 @@
+Hyper Text Transfer Protocol and it is how users get or send data to a server
+Uniform Resource Locator is an address which gets translated to an IP address for something on the internet
+Domain Name System is what converts URLs into IP addresses
+Query String is a key value pair system that allows you to send values that the website offers using the '?'
+Get and Post where get, gets data from the server, and post sends data to the server
+HTTP request is a request from a client to a server which follows the HTTP protocol
+HTTP response is a response from a server to a client which follows the HTTP protocol
+An HTTP header provides additional information about the request or response. An example for request headers are: Host, User-Agent, Accept, Cookie, Cache-Control. Examples for response headers are: Content-Type, Last-Modified, Set-Cookie-Cache Control
+When you type a URL into a browser, the browser turns the name into an IP address using DNS. Then it makes a request to the IP adress. Then the server sends a response. Then the browser makes a DOM from the HTML and any other resources. Then the browser makes seperate HTTP requests for the recourses and recieves response from the server
