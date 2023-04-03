@@ -5,3 +5,22 @@
   #8d2ab5
   #74119c
 */
+
+table{
+  width: 900px;
+  height: 900px;
+  justify-content:space-evenly;
+  background-color: #060ce9;
+}
+
+thead{
+  border: 1px solid #000;
+  color: white;
+  width: 100px;
+}
+
+tbody{
+  border: 1px solid #000;
+  color: white;
+  text-align: center;
+}

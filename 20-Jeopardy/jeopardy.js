@@ -1,3 +1,4 @@
+const NUM_QUESTIONS_PER_CAT = 5;
 
 
 // categories is the main data structure for the app; it looks like this:
@@ -54,47 +55,81 @@ function getCategory(catId) {
  *   (initally, just show a "?" where the question/answer would go.)
  */
 
-async function fillTable() {
-    // Find the jeopardy table in the HTML
-    const jeopardyTable = document.querySelector("#jeopardy");
+// async function fillTable(categories) {
+//     // Find the jeopardy table in the HTML
+//     const jeopardyTable = document.querySelector("#jeopardy");
   
-    // Create the table head
-    const thead = document.createElement("thead");
-    const headRow = document.createElement("tr");
+//     // Create the table head
+//     const thead = document.createElement("thead");
+//     const headRow = document.createElement("tr");
   
-    // Add category titles to the table head
-    for (const category of categories) {
-      const th = document.createElement("th");
-      th.innerText = category.title;
-      headRow.appendChild(th);
-    }
-    thead.appendChild(headRow);
-    jeopardyTable.appendChild(thead);
+//     // Add category titles to the table head
+//     for (const category of categories) {
+//       const th = document.createElement("th");
+//       th.innerText = category.data.title;
+//       headRow.appendChild(th);
+//     }
+//     thead.appendChild(headRow);
+//     jeopardyTable.appendChild(thead);
   
-    // Create the table body
-    const tbody = document.createElement("tbody");
+//     // Create the table body
+//     const tbody = document.createElement("tbody");
   
-    // Define the number of questions per category
-    const NUM_QUESTIONS_PER_CAT = 5;
+//     // Define the number of questions per category
   
-    // Add clues for each category
-    for (let i = 0; i < NUM_QUESTIONS_PER_CAT; i++) {
-      const tr = document.createElement("tr");
+//     // Add clues for each category
+//     for (let i = 0; i < NUM_QUESTIONS_PER_CAT; i++) {
+//       const tr = document.createElement("tr");
   
-      for (const category of categories) {
-        const td = document.createElement("td");
-        td.innerText = "?";
-        td.dataset.catIndex = categories.indexOf(category);
-        td.dataset.clueIndex = i;
+//       for (const category of categories) {
+//         const td = document.createElement("td");
+//         td.innerText = "?";
+//         td.dataset.catIndex = categories.indexOf(category);
+//         td.dataset.clueIndex = i;
+//         td.addEventListener("click", function(e){
+//           console.log("HERE")
+//         })
+//         tr.appendChild(td);
+//       }
   
-        tr.appendChild(td);
-      }
+//       tbody.appendChild(tr);
+//     }
+//     jeopardyTable.appendChild(tbody);
+//   }
   
-      tbody.appendChild(tr);
-    }
-    jeopardyTable.appendChild(tbody);
+async function fillTable(categories) {
+  const jeopardyTable = document.querySelector("#jeopardy");
+
+  const thead = document.createElement("thead");
+  const headRow = document.createElement("tr");
+
+  for (const category of categories) {
+    const th = document.createElement("th");
+    th.innerText = category.data.title;
+    headRow.appendChild(th);
   }
-  
+  thead.appendChild(headRow);
+  jeopardyTable.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+  const NUM_QUESTIONS_PER_CAT = 5;
+
+  for (let i = 0; i < NUM_QUESTIONS_PER_CAT; i++) {
+    const tr = document.createElement("tr");
+
+    for (const category of categories) {
+      const td = document.createElement("td");
+
+      // Set the initial text of the table data cell
+      td.innerText = "?";
+      tr.appendChild(td);
+    }
+
+    tbody.appendChild(tr);
+  }
+  jeopardyTable.appendChild(tbody);
+}
+
 
 /** Handle clicking on a clue: show the question or answer.
  *
@@ -142,7 +177,7 @@ async function setupAndStart() {
     // console.log(response.data)
     console.log(categories)
 
-    fillTable()
+    fillTable(categories)
 
 
 }
