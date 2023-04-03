@@ -100,13 +100,13 @@ function getCategory(catId) {
 async function fillTable(categories) {
   const jeopardyTable = document.querySelector("#jeopardy");
 
-  const thead = document.createElement("thead");
-  const headRow = document.createElement("tr");
+  const thead = document.getElementById("thead");
+  const headRow = document.getElementById("tbody");
 
   for (const category of categories) {
     const th = document.createElement("th");
     th.innerText = category.data.title;
-    headRow.appendChild(th);
+    thead.appendChild(th);
   }
   thead.appendChild(headRow);
   jeopardyTable.appendChild(thead);
@@ -122,6 +122,17 @@ async function fillTable(categories) {
 
       // Set the initial text of the table data cell
       td.innerText = "?";
+      
+      td.dataset.catIndex = categories.indexOf(category);
+      td.dataset.clueIndex = i;
+
+      td.addEventListener("click", function(){
+        td.innerText = `${category.data.clues[i].question}`;
+        td.addEventListener("click", function(){
+          td.innerText = `${category.data.clues[i].answer}`;
+        })
+      })
+
       tr.appendChild(td);
     }
 
@@ -170,8 +181,10 @@ async function setupAndStart() {
     while(ids.length < 6){
         let int = response.data[Math.floor(Math.random() * 100)].id
         if(!ids.includes(int)){
+          if(response.data[int].clues_count > 4){
             categories.push(await axios.get(`https://jservice.io/api/category?id=${int}`))
             ids.push(int)
+          }
         }
     }
     // console.log(response.data)

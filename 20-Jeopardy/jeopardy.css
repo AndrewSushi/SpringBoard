@@ -7,20 +7,24 @@
 */
 
 table{
-  width: 900px;
-  height: 900px;
-  justify-content:space-evenly;
+  width: 600px;
+  height: 600px;
   background-color: #060ce9;
 }
 
-thead{
-  border: 1px solid #000;
+thead th{
+  border: 2px solid white;
   color: white;
+
   width: 100px;
+  height: 100px;
 }
 
-tbody{
-  border: 1px solid #000;
+tbody tr td{
+  border: 2px solid white;
   color: white;
   text-align: center;
+
+  width: 100px;
+  height: 100px;
 }
