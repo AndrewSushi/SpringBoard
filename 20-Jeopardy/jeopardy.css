@@ -5,3 +5,26 @@
   #8d2ab5
   #74119c
 */
+
+table{
+  width: 600px;
+  height: 600px;
+  background-color: #060ce9;
+}
+
+thead th{
+  border: 2px solid white;
+  color: white;
+
+  width: 100px;
+  height: 100px;
+}
+
+tbody tr td{
+  border: 2px solid white;
+  color: white;
+  text-align: center;
+
+  width: 100px;
+  height: 100px;
+}
