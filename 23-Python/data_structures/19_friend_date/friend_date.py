@@ -16,3 +16,5 @@ def friend_date(a, b):
         >>> friend_date(sauron, gandalf)
         True
     """
+    common = set(a[2] + b[2])
+    return (len(a[2]) + len(b[2])) != len(common)
