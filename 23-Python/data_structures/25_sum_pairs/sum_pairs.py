@@ -21,3 +21,9 @@ def sum_pairs(nums, goal):
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+    hash = {}
+    for i in range(len(nums)):
+        if goal - nums[i] in hash:
+            return (goal - nums[i], nums[i])
+        hash[nums[i]] = i
+    return ()
