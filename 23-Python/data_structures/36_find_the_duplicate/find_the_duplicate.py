@@ -13,3 +13,8 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    while nums:
+        num = nums.pop()
+        if num in nums:
+            return num
+    return None
