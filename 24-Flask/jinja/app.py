@@ -9,6 +9,10 @@ debug = DebugToolbarExtension(app)
 
 @app.route('/')
 def home():
+    return render_template("home.html")
+
+@app.route('/hello')
+def hello():
     return render_template("hello.html")
 
 @app.route('/lucky')
@@ -40,3 +44,7 @@ def test():
 def test2():
     username = request.args["username"]
     return render_template("test2.html", username=username)
+
+@app.route('/base')
+def base():
+    return render_template("base.html")
