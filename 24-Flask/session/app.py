@@ -22,6 +22,11 @@ def print_cookies():
 @app.route("/")
 def index():
     """Homepage."""
+    print(session["username"])
+    print(session["leaderboard"])
+    session['username'] = "AndrewSushi727"
+    # session['username'] = "AndrewSushi"
+    # session['leaderboard'] = ['Sushi', 'Steggi', 'Pig']
     return render_template("index.html")
 
 
@@ -140,7 +145,7 @@ def verify_secret_code():
         - set session to indicate that user has access
         - redirect to the secret invite
     """
-    SECRET = "chickenz_are_gr8"
+    SECRET = "727WYSI"
     entered_code = request.args["secret_code"]
     if entered_code == SECRET:
         session["entered-pin"] = True
