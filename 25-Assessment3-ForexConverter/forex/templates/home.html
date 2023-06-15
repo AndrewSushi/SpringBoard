@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% for invalid in invalids %}
+        {% if invalid is not none %}
+            Not a valid {{invalid}}<br>
+        {% endif %}
+    {% endfor %}
     <div id="form">
         <form action="/convert">
             <p>Converting from <input type="text" name="from"></p>
