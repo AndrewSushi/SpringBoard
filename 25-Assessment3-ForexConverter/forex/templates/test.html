@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for item in data %}
+        <p>{{item}}</p>
+    {% endfor %}
+    {{currency}}
+{% endblock %}
