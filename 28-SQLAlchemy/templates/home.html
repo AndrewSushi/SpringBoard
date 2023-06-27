@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Buddies</h1>
+    <ul>
+        {% for buddy in buddies %}
+            <li><a href="/{{buddy.id}}">{{buddy.name}}</a></li>
+        {% endfor %}
+    </ul>
+    <h1>Add New Buddy!</h1>
+    <form action="/" method="POST">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="color" placeholder="color">
+        <input type="number" name="hunger" placeholder="20">
+        <button>Submit Buddy</button>
+    </form>
+</body>
+</html>

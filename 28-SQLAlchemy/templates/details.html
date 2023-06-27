@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{buddy.name}}</title>
+</head>
+<body>
+    <h1>{{buddy.name}} Details</h1>
+    <ul>
+        <li>ID: {{buddy.id}}</li>
+        <li>Name: {{buddy.name}}</li>
+        <li>Color: <a href="/colors/{{buddy.color}}">{{buddy.color}}</a></li>
+        <li>Hunger: {{buddy.hunger}}</li>
+    </ul>
+    <blockquote>
+        <p>{{buddy.greet()}}</p>
+    </blockquote>
+    <form action="/delete/{{buddy.id}}">
+        <button>DELETE BUDDY?!?!</button>
+    </form>
+    <a href="/">Go Back</a>
+</body>
+</html>
