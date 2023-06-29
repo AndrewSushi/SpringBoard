@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<img src="{{user.image_url}}" alt="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAH8AfwMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYCAwQBB//EAEIQAAEDAgQDBQMHCAsAAAAAAAEAAgMEEQUSITETQVFhcYGRoRQisQYVIzJSksEzU2JyorLC8BY0NUJEY2R00dLh/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APuKIiAiIgIiICxzC9juuDHaqSmobwuyPkkbGH/Zud1GYRT0bKyeqqeEJISGsfKRcXFy651JO1+xBZEWiOspZXZYqmF56NkBW66D1ERAREQEREBERARFH4rXmlDYoAHVEguL7MH2j/Ovmg21uI09GQ17i6Ui4iYLuP8AwO06KLlxOumvk4dOzlYZ3+Z0Hke9crG5bkkue43e927j1KyQYTxmpblqpZZhvZ7zl+6LD0WMtPBLI2SWGN72izS5oNlszDMW3FwAbfz3L1BrdBC8WfDE4dCwL2Fr6f8Aqs8sI5Na67fum4WaIO6DGJI9K2MFv52Ebd7d/K6loZY5o2yRPa9jtnNNwVW0hlko5ePTgnW8kQOkg7uTu1BZ0WunnjqIWzQvD43i7SFsQEREBERBrnlZBBJLIbMY0ucewKssMkj31E/5aY5nfojk3wGnfc81KfKCU8KCmafyz7vt9hup9co8VHICLXG8vc8AaNdlB69fXRZ5HyyMp4iQ+TmP7rRu7w+JCDnpHiV9RKNuJkb3NA/G66ViYmwVNTDGMrGy+6OgytsskBc8IcKh8hPuTA5B0yHKfVbnuyMc87NBJWyvj9kwvD533tCA2Sw1s8f9rIMV5yXP7QyoYY6SRr5nAhovax6noButgzQNYx4YYxlaHMJ93kLgj1QSOBScOoqKbZrvpmDtOjvWx8VNqt0b+HilI77ZdGe4tJ+LQrIgIiICIiCAxV+fFHjlHE1o7yST8Grme4MY552aCSttZ/alZ+s39xq552cWCSMGxe0tueSDnu6Onp4RmMsrhoz6xP1nW9R4qZw2grKaqfLLJA5krfeYGHMy2zQ6+o16BcNFmpvb61300lPS3aLWF/eJA6bBbBhNN80e3TVLxWGLjGtEhBDrX01tl7NrIN2MQmKcVgB4T2hkv6JGzu7Wx8FzKYw+V9Vh1NNURhr5YWuewjQEi5FvFcU+FOj1oXNy/mZDoOxp5Ds27kEfUi9PIPtNI89FJmiZNLPDV4i+YyMc32cENaxp2s0cx1KhcWdNDQyNmjkgkOUOcASGgkAuDhpoCT4KRr8NwmnwOSaEQsfHGZIqpts+e1w7NuST5oI5kLKDE445GRxSSMfGSDZrr2IcOWpFu8rqrARDkcC1z3NawHmb3PlqfBSFbB7Zgznzxjjeyu0I2Lma6KMhhhZaSKNrS5uh6DoOgQbL/T0x6VEdvvW/FWhVSncZqinbb/Fho7mm/wDCVa0BERAREQVzF3NpsQqZJDlYY2yE9liD8PVamkOAI2Iupuuw6OsqKeV5sIiczeT2kbHxAPgoGJromugkJzwHhuv2bHxFj4oJLBG3jqnEbzW8Mjf/AFG4DhzXA8GQxtN2wumeYgexhNllgh+gnHSc/utUigIoCux6enrZqeOCJojIaDIJCXaA3s1p019Fo/pBVf6RvfT1B/gQWXlbl0K4Y8GwyOYSx0FO14OYEMGh6gKLGOVXCkmbLh8rYcpkjY2Rr8pcBezu9WNBhPbgSZtshv5KtQPEdDHJKbBsQc49llN4xLwsOmDTZ8g4TP1nael7+CiaOJlbiLaNpHChAkmHW1rN+BPZ3oM/k/EZKqFzwDw4zM+3J79vi9WZcVBhzKGWd0TyWS2swj6lr6Ds1XagIiICIiAo3EsNM7/aKYtbOBYh31ZB0PQ9CpJEFTixCow2vkgfTEiQCR0btDfa4dsRYDyOylYsboH6STcB21pxk9dj4Fe41hs1ZNBJTGNrmtc15eTsbEbb2t6rirsNw+goiaury1J1ZK4kXPQMG47NUE1HPFILxSscOrXAr10rWC75GtHa6y+c1EwkkMZghiIAOZ0YJPdcLbQTsonPz0dPU5iCDIA1ze7RBZ8UfglTUMkqa1pkYLFkMty8Zs1i1tydQspcfabilpZX9Hy/Rt8t/RVaqrpZZ+OCyl90NDI9RYX3uNd1toqt00rm1U5hjaBeRlOX6m+4vp5IO2sra+pqWuld7rGktbGy4Z1cBubDmTz2Un8lo2irqCzVrYma3vfMXG9+ey34FDRid80GIQ1ZLMrQ2wLeul+5d+HYbFQSVDoCcszw4N5MHQdlyfNB3IiICIiAiIgIiIOPGKh9Lh08sRAkAswkXsSbD4qmRMbxpXOu+YGzpHnM489yrP8AKiQMw9jCQOJM0a9nvfgqw2xqnlpuDG34lBqr6X2hl2AF43btmHTv6KJbC4uLc+Ucw7Rw8FYVi+Nkn12Ndba4vZBE09HmN4Wa85n8u7qpSCFsEeRlzrcuO7j1K2Ig0TsBmiLGtE18zZLatI1Fj32V3w2pFZQQVIFuIwEjoeY81SHva2qbmOX6M6k9oVm+Sr82HyMbYsZO8NcNQQdd+8kIJpERAREQEREBERBxYu0OpGtcAQZ4hYj/ADGquYrFHFiszYo2RjIzRjQAd9dPFWPE9WU7etRH6G/4KvY8D885r+66HLbtbrf9tByItbzw7uJIb1HJZAusLWPogyRee8exegW2Qb8LaHY1Rgsa7SS9xewy7+dlYcH0bVx20ZVSAeJzfioTAIh84tqCTncJYxroGjIdu8lTuGC01f8A7m/7DEHeiIgIiIP/2Q==">
+<h1>{{user.first_name}} {{user.last_name}}</h1>
+<form action="/users/{{user.id}}/edit">
+    <button>Edit</button>
+</form>
+<form action="/users/{{user.id}}/delete">
+    <button>Delete</button>
+</form>
+<form action="/">
+    <button>Home</button>
+</form>
+{% if posts %}
+    <h2>Posts</h2>
+    <ul>
+        {% for post in posts%}
+        <li><a href="/posts/{{post.id}}">{{post.title}}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<form action="/users/{{user.id}}/posts/new">
+    <button>Add Post</button>
+</form>
+{% endblock %}
