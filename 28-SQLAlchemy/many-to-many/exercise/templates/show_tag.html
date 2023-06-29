@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{tag.name}}</h1>
+    <form action="/tags/{{tag.id}}/edit">
+        <button>Edit</button>
+    </form>
+    <form action="/tags/{{tag.id}}/delete">
+        <button>Delete</button>
+    </form>
+    <form action="/">
+        <button>Home</button>
+    </form>
+{% endblock %}

@@ -4,6 +4,9 @@
     <form method="POST">
         Title <input class="form-control" id="title" name="title"><br>
         Content <textarea class="form-control" id="content" name="content" rows="9" cols="30"></textarea><br>
+        {% for tag in tags %}
+            <input type="checkbox" id="{{tag.name}}">{{tag.name}}<br>
+        {% endfor %}
         <button type="submit">Add</button>      
     </form>
     <form action="/users/{{user.id}}">
