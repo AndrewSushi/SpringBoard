@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Home</h1>
+{% for msg in get_flashed_messages() %}
+    <p>{{msg}}</p>
+{% endfor %}
+<ul>
+    <li>
+        <a href="/snacks/new">Add New Snack</a>
+    </li>
+    <li>
+        <a href="/phones">View Phone Directory</a>
+    </li>
+</ul>
+{% endblock %}
