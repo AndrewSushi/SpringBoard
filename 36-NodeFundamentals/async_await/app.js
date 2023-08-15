@@ -12,5 +12,9 @@ class Pokemon{
     }
 }
 
+<<<<<<< HEAD
 // Pokemon(56)
 console.log("Hello World")
+=======
+// Pokemon(56)
+>>>>>>> origin/main
