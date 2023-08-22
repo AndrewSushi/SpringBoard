@@ -2,7 +2,7 @@
 
 const pg = require("pg");
 
-const db = new pg.Client("postgresql:///express_pg_oo");
+const db = new pg.Client({database:"express_pg_oo", host: "/var/run/postgresql/"});
 
 db.connect();
 

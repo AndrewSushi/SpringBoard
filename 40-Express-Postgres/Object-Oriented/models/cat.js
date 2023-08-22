@@ -21,16 +21,14 @@ class Cat {
 
   /** get cat by id: returns {name, age} */
 
-  static async getById(id) {
-    const result = await db.query(
-        `SELECT name, age FROM cats WHERE id = $1`,
-        [id]);
-
-    if (result.rows.length === 0) {
-      throw new Error(`No such cat: ${id}`);
+  static async getById(id){
+    try{
+      const result = await db.query(
+        "SELECT id, name, age FROM cats WHERE id=$1", [id])
+      return result.rows[0]
+    }catch(e){
+      return next(e)
     }
-
-    return result.rows[0];
   }
 
   /** create a cat: returns {name, age} */
