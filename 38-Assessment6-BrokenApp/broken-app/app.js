@@ -3,13 +3,13 @@ const axios = require('axios');
 const app = express();
 app.use(express.json());
 
-app.post('/', async function(req, res, next) {
+app.get('/', async function(req, res, next) {
     try {
         let results = await Promise.all(req.body.developers.map(async d => {
             return await axios.get(`https://api.github.com/users/${d}`);
         }));
 
-        let out = results.map(r => ({ name: r.data.name, bio: r.data.bio }));
+        let out = results.map(result => ({ name: result.data.name, bio: result.data.bio }));
 
         return res.send(JSON.stringify(out));
     } catch (err) {
