@@ -7,28 +7,28 @@ function stringToTime(timeString) {
     const hour = parseInt(hourStr, 10);
     const minute = parseInt(minStr, 10);
   
-    if (hour < 0 || hour > 24 || minute < 0 || minute > 59) {
+    if(hour < 0 || hour > 24 || minute < 0 || minute > 59){
       return "Invalid time format";
     }
   
     let time = "";
   
-    if (hour == 0 && minute == 0) {
+    if(hour == 0 && minute == 0){
         time = "midnight";
-    } else if (hour == 12 && minute == 0) {
+    }else if(hour == 12 && minute == 0){
         time = "noon";
-    } else {
+    }else{
         const period = hour < 12 ? "AM" : "PM";
         const formattedHour = hour <= 12 ? hours[hour] : hours[hour % 12];
-        if (minute === 0) {
+        if(minute === 0){
             time = `${formattedHour} o'clock ${period}`;
-        } else if (minute < 10) {
+        }else if(minute < 10){
             time = `${formattedHour} oh ${minutes[minute]} ${period}`;
-        } else if (minute < 20) {
+        }else if(minute < 20){
             time = `${formattedHour} ${minutes[minute]} ${period}`;
-        } else if (minute % 10 === 0) {
+        }else if(minute % 10 === 0){
             time = `${formattedHour} ${tens[Math.floor(minute / 10)]} ${period}`;
-        } else {
+        }else{
             time = `${formattedHour} ${tens[Math.floor(minute / 10)]} ${minutes[minute % 10]} ${period}`;
         }
     }
@@ -36,5 +36,5 @@ function stringToTime(timeString) {
     return time;
 }
   
-  module.exports = stringToTime;
+module.exports = stringToTime;
   
