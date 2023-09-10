@@ -24,13 +24,16 @@ app.use(function(req, res, next) {
 
 /** general error handler */
 
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
+app.use(function(req, res, next) {
+  const err = new ExpressError("Not Found", 404);
 
-  return res.json({
-    status: err.status,
-    message: err.message
-  });
+  // only execute the next middleware function if there is no error
+  if (!err) {
+    return next();
+  }
+
+  // pass the error to the next piece of middleware
+  return next(err);
 });
 
 module.exports = app;

@@ -40,10 +40,10 @@ router.post('/login', async function(req, res, next) {
     const { username, password } = req.body;
     let user = User.authenticate(username, password);
     const token = createTokenForUser(username, user.admin);
-    return res.json({ token });
+    return res.status(401).json({ token }); // Not returning a 401 status code
   } catch (err) {
     return next(err);
   }
-}); // end
+});
 
 module.exports = router;
