@@ -1,0 +1,13 @@
+.Clicker-light{
+    background-color: white;
+}
+.Clicker-light button{
+    background-color: rgb(40, 36, 36);
+    color: white;
+}
+.Clicker-dark{
+    background-color: rgb(40, 36, 36);
+}
+.Clicker-dark button{
+    background-color: white;
+}
