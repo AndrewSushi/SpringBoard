@@ -2,6 +2,7 @@ import './App.css';
 import ColorPicker from './ColorPicker';
 import Counter from './Counter';
 import MoodClicker from './MoodClicker';
+import SignupForm from './SignupForm';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Counter />
       <MoodClicker />
       <ColorPicker />
+      <SignupForm />
     </div>
   );
 }
