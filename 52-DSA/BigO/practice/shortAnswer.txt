@@ -1,0 +1,35 @@
+1. True or false: n^2 + n is O(n^2).
+    True, n^2 is the highest power.
+
+2. True or false: n^2 * n is O(n^3).
+    True, n^2 is bounded under n^3.
+
+3. True or false: n^2 + n is O(n).
+    False, n^2 > n.
+
+4. What’s the time complexity of the .indexOf array method?
+    O(n), is goes through array length n.
+
+5. What’s the time complexity of the .includes array method?
+    O(n), is goes through array length n.
+
+6. What’s the time complexity of the .forEach array method?
+    O(n), is goes through array length n.
+
+7. What’s the time complexity of the .sort array method?
+    O(nlog(n)), since fastest sorting algorithm is nlog(n)
+
+8. What’s the time complexity of the .unshift array method?
+    O(n), it moves all the elements
+
+9. What’s the time complexity of the .push array method?
+    O(1), it is a single add operation
+
+10. What’s the time complexity of the .splice array method?
+    O(n), it moves elements
+
+11. What’s the time complexity of the .pop array method?
+    O(1), it removes the last element and doesn't change anything else
+
+12. What’s the time complexity of the Object.keys() function?
+    O(n), it iterates over the elements
