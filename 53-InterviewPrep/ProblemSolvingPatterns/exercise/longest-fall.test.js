@@ -1,3 +1,5 @@
+const longestFall = require("./longest-fall")
+
 describe("longestFall", function() {
   it("should return 0 for an empty array", function() {
     expect(longestFall([])).toBe(0);
